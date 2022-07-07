@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("/image/image.png");
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+        }
+        #navbar{
+            height: 150px;
+
+            border: solid white 1.5px;
+            background-color: rgba(0, 0, 0,0.1);
+        }
+        #flex{
+            display: flex;
+        }
+        .ulf{
+            display: flex;
+        }
+         .lif{
+             
+              padding:12px 50px;
+              font-size: 25px;
+        }
+       #navbar ul li{
+            text-decoration: none;
+            list-style: none;
+           
+        }
+        #navbar ul li a{
+            text-decoration: none;
+        }
+        #btn{
+            float: right;
+            padding:33px 130px;
+            
+            
+        }
+        .n1{
+            padding: 0px 5px;
+           
+            
+        }
+        .h_1{
+            position: absolute;
+            top: 151px;
+    left: 390px;
+            font-size: 50px;
+            color: transparent;
+            -webkit-text-stroke: 1px rgb(27, 43, 117);
+       background: url(/image/meal.jpg);
+            -webkit-background-clip:  text;
+        background-position: 0 0;
+        animation: back 20s linear infinite;
+        }
+        #p_lay{
+            font-size: 150%;
+            position: absolute;
+            top: 290px;
+            left: 695px;
+            color: transparent;
+            -webkit-text-stroke: 1px rgb(27, 43, 117);
+       background: url(/image/meal.jpg);
+            -webkit-background-clip:  text;
+        background-position: 0 0;
+        animation: back 20s linear infinite;
+        }
+        #play{
+            position: absolute;
+            top: 327px;
+            left: 704px;
+        }
+        @keyframes back {
+            100%{
+                background-position: 2000px 0;
+            }
+            
+        }
+        .control{
+
+        }
+        #cnt{
+            padding: 15px;
+            background-color: aqua;
+            position: absolute;
+            top: 546px;
+            left: 643px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+   <div id="navbar"> <div id="flex">
+    <div id="logo"><img src="logo.png" alt=""></div>
+    
+   
+
+
+<ul class="ulf">
+    <li class="lif"><a href="#fhkjah">MENU</a></li>
+    <li class="lif"><a href="#fhkjah">HOME</a></li>
+    <li class="lif"><a href="#fhkjah">PLAY LIST</a></li>
+    <li class="lif"><a href="#fhkjah">CONTUCT US</a></li>
+</ul>
+<div id="btn">
+    <button class="n1">sign up</button>
+    <button class="n1">Rgister</button>
+</div>
+    
+</button>
+</div>
+</div>
+<h1 class="h_1">!!!  LOVE THE SOUND OF JOY  !!!</h1>
+</body>
+<div class="cntrol">
+    <img src="/image/pause.png" alt="" id="play">
+    <h1 id="p_lay"> PLAY SONG </h1>
+</div>
+<div><button id="bt">change the song</button></div>
+<div id="cnt"><audio controls   src="/song/song1.mp3" id="mysong" type="audio/mp3"></audio></div>
+
+<div id="music">
+    <ul>
+        <li id="m1" class="mus">first song </li>
+        <li id="m2" class="mus">second song</li>
+        <li id="m3"class="mus">third song</li>
+        <li id="m4"class="mus">fourth song</li>
+        <li id="m5"class="mus">fifth song</li>
+        <li id="m6"class="mus">sixth song</li>
+    </ul>
+</div>
+
+<script>var mysong=document.getElementById("mysong");
+var icon=document.getElementById("play");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var sum=0;
+function pSong(){
+  
+    if(mysong.paused){
+    
+    
+mysong.play();
+play.src="/image/play.png"}
+else{
+    mysong.pause();
+    play.src="/image/pause.png";
+}
+}
+function  nSource( name){{
+    mysong.setAttribute("src",("/song/song"+((name%6)+1)+".mp3"));
+    mysong.play();}
+}
+
+
+play.onclick=function(){
+    pSong();
+   
+   
+}
+
+mysong.addEventListener('ended',function(){
+    // mysong.setAttribute("src",("/song/song"+((sum)+1)+".mp3"));
+    // mysong.play();
+    nSource(sum);
+    sum=sum+1;
+    console.log(sum);
+    
+});
+
+
+bt.onclick=function(){
+    
+    var newsource="/song/song"+((sum%6)+1)+".mp3";
+    mysong.setAttribute("src",newsource);
+    pSong();
+    sum=sum+1; 
+}
+
+// var ps=document.querySelectorAll(".mus").length;
+// for(var i=0;i<10;i++){
+//     document.querySelector("#play").addEventListener("click",function(){
+//         nSource(i);
+//         return;
+//     });
+// }
+
+
+m1.onclick=function(){
+    
+sum=0;
+nSource(sum);
+}
+m2.onclick=function(){
+sum=1;
+nSource(sum);
+}
+m3.onclick=function(){
+sum=2;
+nSource(sum);
+}
+m4.onclick=function(){
+sum=3;
+nSource(sum);
+}
+m5.onclick=function(){
+sum=4;
+nSource(sum);
+}
+m6.onclick=function(){
+sum=5;
+nSource(sum);
+}
+
+
+
+</script>
+</html
